@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover amazing destinations and book your next holiday with TravelVista.">
+  <title>TravelVista | Explore the World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="logo" href="#home">
+      <span class="logo-icon">✦</span> TravelVista
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#packages">Tour Packages</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+      <a href="#packages" class="nav-cta">Explore Trips ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow hero-eyebrow">YOUR NEXT ADVENTURE STARTS HERE</span>
+        <h1>Discover places<br>that <span>move your soul.</span></h1>
+        <p>
+          Unforgettable journeys, handpicked destinations, and
+          beautiful memories waiting to be made.
+        </p>
+        <div class="hero-actions">
+          <a href="#packages" class="btn btn-primary">Explore Packages ↗</a>
+          <a href="#about" class="btn btn-outline">Discover Our Story</a>
+        </div>
+        <div class="hero-note">
+          <span class="avatar-stack">✦ ✦ ✦</span>
+          <span>Thoughtfully planned trips for every traveler</span>
+        </div>
+      </div>
+      <div class="hero-decoration">
+        <span>FIND YOUR</span>
+        <strong>Somewhere</strong>
+        <span>EXTRAORDINARY</span>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <form class="search-panel" id="searchForm">
+        <div class="search-field">
+          <label for="destinationSearch">Where do you want to go?</label>
+          <select id="destinationSearch">
+            <option value="">All destinations</option>
+            <option value="Goa">Goa</option>
+            <option value="Manali">Manali</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Kashmir">Kashmir</option>
+            <option value="Rajasthan">Rajasthan</option>
+          </select>
+        </div>
+
+        <div class="search-field">
+          <label for="travelDate">Departure date</label>
+          <input type="date" id="travelDate">
+        </div>
+
+        <div class="search-field">
+          <label for="travelers">Travelers</label>
+          <select id="travelers">
+            <option value="1">1 Traveler</option>
+            <option value="2" selected>2 Travelers</option>
+            <option value="3">3 Travelers</option>
+            <option value="4">4 Travelers</option>
+            <option value="5">5 Travelers</option>
+            <option value="6">6 Travelers</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary search-btn" type="submit">
+          Search Trips
+        </button>
+      </form>
+    </section>
+
+    <section class="section destinations-section" id="destinations">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PLACES WORTH EXPLORING</span>
+          <h2>Popular destinations</h2>
+          <p>From peaceful beaches to breathtaking mountains.</p>
+        </div>
+        <a href="#packages" class="text-link">View all trips ↗</a>
+      </div>
+
+      <div class="destination-grid">
+        <button class="destination-card" data-destination="Goa"
+          style="--destination-image: url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85')">
+          <span class="destination-label">BEACH ESCAPES</span>
+          <span class="destination-name">Goa</span>
+          <span class="destination-arrow">↗</span>
+        </button>
+
+        <button class="destination-card" data-destination="Manali"
+          style="--destination-image: url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=85')">
+          <span class="destination-label">MOUNTAIN MAGIC</span>
+          <span class="destination-name">Manali</span>
+          <span class="destination-arrow">↗</span>
+        </button>
+
+        <button class="destination-card" data-destination="Kerala"
+          style="--destination-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85')">
+          <span class="destination-label">NATURE & CULTURE</span>
+          <span class="destination-name">Kerala</span>
+          <span class="destination-arrow">↗</span>
+        </button>
+
+        <button class="destination-card" data-destination="Kashmir"
+          style="--destination-image: url('https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=900&q=85')">
+          <span class="destination-label">SCENIC RETREATS</span>
+          <span class="destination-name">Kashmir</span>
+          <span class="destination-arrow">↗</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section packages-section" id="packages">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR JOURNEY, YOUR WAY</span>
+          <h2>Handpicked tour packages</h2>
+          <p>Thoughtfully curated holidays for your next escape.</p>
+        </div>
+      </div>
+
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-category="All">All Trips</button>
+        <button class="filter-btn" data-category="Beach">Beach</button>
+        <button class="filter-btn" data-category="Adventure">Adventure</button>
+        <button class="filter-btn" data-category="Nature">Nature</button>
+        <button class="filter-btn" data-category="Culture">Culture</button>
+      </div>
+
+      <p class="results-count" id="resultsCount" aria-live="polite"></p>
+      <div class="package-grid" id="packageGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>
+        No packages match your search. Try another destination or category.
+      </p>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-image"></div>
+      <div class="about-content">
+        <span class="eyebrow">MORE THAN JUST A HOLIDAY</span>
+        <h2>We turn your travel dreams into beautiful memories.</h2>
+        <p>
+          Every journey deserves care, curiosity, and a little magic.
+          We help travelers discover new places with thoughtfully
+          planned itineraries and personal support.
+        </p>
+        <div class="about-points">
+          <div><strong>01</strong><span>Carefully planned itineraries</span></div>
+          <div><strong>02</strong><span>Clear package pricing</span></div>
+          <div><strong>03</strong><span>Friendly travel assistance</span></div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Plan Your Trip ↗</a>
+      </div>
+    </section>
+
+    <section class="section booking-section" id="booking">
+      <div class="booking-banner">
+        <span class="eyebrow">YOUR NEXT CHAPTER AWAITS</span>
+        <h2>Have a destination in mind?</h2>
+        <p>Tell us what you dream of. We'll help you plan the journey.</p>
+        <button class="btn btn-light" id="customTripBtn" type="button">
+          Enquire About a Trip ↗
+        </button>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">LET'S PLAN SOMETHING SPECIAL</span>
+          <h2>Get in touch</h2>
+          <p>Questions, custom trips, or group travel? Send us a message.</p>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="contactName">Your name</label>
+            <input id="contactName" name="name" required maxlength="100"
+              placeholder="Enter your name">
+          </div>
+          <div class="form-field">
+            <label for="contactEmail">Email address</label>
+            <input id="contactEmail" name="email" type="email" required
+              maxlength="150" placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="contactMessage">How can we help?</label>
+          <textarea id="contactMessage" name="message" required
+            maxlength="2000" rows="4"
+            placeholder="Tell us about your travel plans..."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send Inquiry ↗</button>
+        <p class="form-message" id="contactMessageStatus" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo footer-logo" href="#home">
+      <span class="logo-icon">✦</span> TravelVista
+    </a>
+    <p>Make memories. Discover more. Travel beautifully.</p>
+    <div class="footer-links">
+      <a href="#destinations">Destinations</a>
+      <a href="#packages">Packages</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="copyright">© <span id="currentYear"></span> TravelVista. All rights reserved.</p>
+  </footer>
+
+  <dialog class="booking-dialog" id="bookingDialog">
+    <div class="dialog-header">
+      <div>
+        <span class="eyebrow">LET'S GET YOU THERE</span>
+        <h2 id="dialogTitle">Book your adventure</h2>
+      </div>
+      <button type="button" class="dialog-close" id="closeDialog"
+        aria-label="Close booking form">✕</button>
+    </div>
+
+    <p id="dialogDescription" class="dialog-description">
+      Share your details and our travel team can help you plan your trip.
+    </p>
+
+    <form id="bookingForm">
+      <input type="hidden" id="bookingType" name="bookingType" value="inquiry">
+
+      <div class="form-field">
+        <label for="bookingTour">Tour package</label>
+        <select id="bookingTour" name="tour" required></select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="bookingName">Full name</label>
+          <input id="bookingName" name="name" required maxlength="100"
+            autocomplete="name" placeholder="Your name">
+        </div>
+        <div class="form-field">
+          <label for="bookingEmail">Email address</label>
+          <input id="bookingEmail" name="email" type="email" required
+            maxlength="150" autocomplete="email" placeholder="you@example.com">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="bookingPhone">Phone number</label>
+          <input id="bookingPhone" name="phone" type="tel" required
+            maxlength="20" autocomplete="tel" placeholder="Your phone number">
+        </div>
+        <div class="form-field">
+          <label for="bookingDate">Departure date</label>
+          <input id="bookingDate" name="date" type="date" required>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="bookingTravelers">Number of travelers</label>
+        <select id="bookingTravelers" name="travelers" required>
+          <option value="1">1 traveler</option>
+          <option value="2" selected>2 travelers</option>
+          <option value="3">3 travelers</option>
+          <option value="4">4 travelers</option>
+          <option value="5">5 travelers</option>
+          <option value="6">6 travelers</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="bookingNotes">Additional requests (optional)</label>
+        <textarea id="bookingNotes" name="notes" rows="3" maxlength="1000"
+          placeholder="Room preferences, pickup, special requests..."></textarea>
+      </div>
+
+      <div class="booking-summary" id="bookingSummary"></div>
+
+      <button class="btn btn-primary full-width" type="submit" id="bookingSubmit">
+        Submit Inquiry
+      </button>
+      <p class="form-message" id="bookingMessage" aria-live="polite"></p>
+      <p class="small-note">
+        Demo only: this form does not create a real reservation or process payment.
+      </p>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
