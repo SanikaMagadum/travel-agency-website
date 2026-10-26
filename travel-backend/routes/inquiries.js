@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("../db");
+const { sendBookingNotification } = require("../email");
 
 // Submit a booking inquiry
 router.post("/", async (req, res) => {
@@ -48,6 +49,20 @@ router.post("/", async (req, res) => {
     ];
 
     const [result] = await pool.execute(sql, values);
+    try {
+  await sendBookingNotification({
+    name,
+    email,
+    phone,
+    tour_id: Number(tour_id),
+    travel_date,
+    travelers: Number(travelers),
+    message
+  });
+  console.log("Booking notification email sent successfully.");
+} catch (emailError) {
+  console.error("Booking saved, but notification email failed:", emailError.message);
+}
 
     res.status(201).json({
       success: true,
